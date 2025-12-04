@@ -1,6 +1,6 @@
 package L01_ChristmasTree {
     part def SensmetryChristmasTree {
-        doc
+        doc Description
         /* A festive Christmas tree with various decorations and components
          * - Tree parts
          * - Decorative parts
