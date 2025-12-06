@@ -16,25 +16,26 @@ package AdventOfSysMLv2_Lesson06 {
             doc
             /* Naughty-Nice dashboard. */
         }
-    }
 
-    abstract ref part reindeer : Reindeer [10];
+        // Entities related to the sleigh
+        abstract ref part reindeer : Reindeer [10];
 
-    ref part dasher subsets reindeer { constant attribute redefines noseColor = Color::orange; }
-    ref part dancer subsets reindeer { constant attribute redefines noseColor = Color::yellow; }
-    ref part prancer subsets reindeer { constant attribute redefines noseColor = Color::green; }
-    ref part vixen subsets reindeer { constant attribute redefines noseColor = Color::blue; }
-    ref part comet subsets reindeer { constant attribute redefines noseColor = Color::indigo; }
-    ref part cupid subsets reindeer { constant attribute redefines noseColor = Color::violet; }
-    ref part donner subsets reindeer { constant attribute redefines noseColor = Color::silver; }
-    ref part blitzen subsets reindeer { constant attribute redefines noseColor = Color::gold; }
-    ref part rudolph subsets reindeer {
-        constant attribute redefines noseColor = Color::red;
-        attribute redefines energyLevel := 200.0;
-    }
-    ref part josh subsets reindeer {
-        constant attribute redefines noseColor = Color::blue;
-        attribute redefines energyLevel := 9000.1;
+        ref part dasher subsets reindeer { constant attribute redefines noseColor = Color::orange; }
+        ref part dancer subsets reindeer { constant attribute redefines noseColor = Color::yellow; }
+        ref part prancer subsets reindeer { constant attribute redefines noseColor = Color::green; }
+        ref part vixen subsets reindeer { constant attribute redefines noseColor = Color::blue; }
+        ref part comet subsets reindeer { constant attribute redefines noseColor = Color::indigo; }
+        ref part cupid subsets reindeer { constant attribute redefines noseColor = Color::violet; }
+        ref part donner subsets reindeer { constant attribute redefines noseColor = Color::silver; }
+        ref part blitzen subsets reindeer { constant attribute redefines noseColor = Color::gold; }
+        ref part rudolph subsets reindeer {
+            constant attribute redefines noseColor = Color::red;
+            attribute redefines energyLevel := 200.0;
+        }
+        ref part josh subsets reindeer {
+            constant attribute redefines noseColor = Color::blue;
+            attribute redefines energyLevel := 9000.1;
+        }
     }
 
     part def Reindeer {
