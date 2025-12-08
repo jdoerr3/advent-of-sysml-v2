@@ -17,12 +17,15 @@ def find_element_by_name(model: syside.Model, name: str) -> syside.Element | Non
     return None
 
 
-def show_part_attributes(part: syside.Element, part_level: int = 0) -> None:
+def show_part_attributes(part: syside.Element) -> None:
     """
     Prints a list of attributes for the input part.
     """
 
-    # TODO: Update function
+    print(f"Part: {part.name}")
+    for owned_element in part.owned_elements:
+        if type(owned_element) is syside.AttributeUsage:
+            print(f" └ Attribute: {owned_element.name}")
 
 
 def main() -> None:
@@ -33,6 +36,11 @@ def main() -> None:
     assert not diagnostics.contains_errors(warnings_as_errors=True)
 
     root_element = find_element_by_name(model, "SantaSleigh")
+
+    print("\nPrinting part attributes:\n")
+    show_part_attributes(root_element)
+
+    root_element = find_element_by_name(model, "Reindeer")
 
     print("\nPrinting part attributes:\n")
     show_part_attributes(root_element)
