@@ -39,3 +39,4 @@ Here is a complete list of lessons with links to YouTube videos and blog posts:
 4. **Specializations** ([YouTube](https://youtu.be/2FWxUGlkrE0?si=WbHCYznUAr2tGSq1), [Blog post](https://sensmetry.com/advent-of-sysml-v2-lesson-4-specializations/))
 5. **Modifiers and Multiplicities** ([YouTube](https://youtu.be/86YY4sXrSaM?si=-qD8BC6fB7VI1Dbf), [Blog post](https://sensmetry.com/advent-of-sysml-v2-lesson-5-modifiers-and-multiplicities/))
 6. **Version control with Git** ([YouTube](https://youtu.be/ijgh83xB0Pg?si=IMpjH0Irs7xHTBJj), [Blog post](https://sensmetry.com/advent-of-sysml-v2-lesson-6-version-control-with-git/))
+7. **Week 1 recap** ([YouTube](https://youtu.be/kv7c0oTrSyo?si=QB5UbROBd_95QjyB), [Blog post](https://sensmetry.com/advent-of-sysml-v2-lesson-7-week-1-recap/))
