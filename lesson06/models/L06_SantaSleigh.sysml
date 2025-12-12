@@ -18,7 +18,8 @@ package AdventOfSysMLv2_Lesson06 {
         }
 
         // Entities related to the sleigh
-        ref item santa;
+        ref item santaClause;
+        ref item mrsClause;
         abstract ref part reindeer : Reindeer [9];
 
         ref part dasher subsets reindeer { constant attribute redefines noseColor = Color::orange; }
