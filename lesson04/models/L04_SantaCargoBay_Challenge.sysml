@@ -1,5 +1,5 @@
 package L04_SantaCargoBay_Challenge {
-    part def Sleigh {    
+    part def Sleigh {
         part cargoBay {
             item payload : Bag;
         }
@@ -14,4 +14,19 @@ package L04_SantaCargoBay_Challenge {
     // - The gift bag should always be a bottomless gift bag.
     // - The gift bag should contain at least a toy train, a teddy bear, and a candy cane.
 
+    part def bottomlessBag :> Bag {
+        item gifts : Gift [0..*];
+    }
+
+    item def Gift;
+
+    part def santaSleigh :> Sleigh {
+        part :>> cargoBay {
+            item giftBag :>> payload : bottomlessBag {
+                item 'toy train' :> gifts;
+                item 'teddy bear' :> gifts;
+                item 'candy cane' :> gifts;
+            }
+        }
+    }
 }
