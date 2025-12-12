@@ -9,6 +9,7 @@ Links related to the Advent of SysML v2 training course:
 Course content: 
 - YouTube playlist: https://www.youtube.com/playlist?list=PLuceG5piNwHG7KBdo02RDPAkJ-ErbzHe0 
 - Blog posts: https://sensmetry.com/category/advent-of-sysml-v2/ 
+- GitHub: https://github.com/sensmetry/advent-of-sysml-v2
 
 ## Documentation
 
@@ -20,14 +21,9 @@ Syside Automator: https://docs.sensmetry.com/automator/index.html#automator-home
 
 SysMLv2 Cheatsheet: https://sensmetry.com/sysml-cheatsheet/ 
 
-## Helper tools
+Sysand: https://sysand.org/ 
 
-### SysML Syntax Explorer
-
-The SysML Syntax Explorer is a browser-based tool to visualize how Syside parses SysML v2 code. It displays code as an interactive concrete syntax tree (CST) structure, revealing the underlying hierarchy of declarations, expressions, and other language constructs. Use this tool to accelerate Syside Automator script development to quickly identify any elements of interest and how to parse them.
-
-- Explorer with instructions how to use it: https://docs.sensmetry.com/automator/tree-sitter-playground.html 
-- Full screen explorer: https://cst.syside.app/ 
+Sysand docs: https://docs.sysand.org/
 
 ## Lessons
 
@@ -41,3 +37,25 @@ Here is a complete list of lessons with links to YouTube videos and blog posts:
 6. **Version control with Git** ([YouTube](https://youtu.be/ijgh83xB0Pg?si=IMpjH0Irs7xHTBJj), [Blog post](https://sensmetry.com/advent-of-sysml-v2-lesson-6-version-control-with-git/))
 7. **Week 1 recap** ([YouTube](https://youtu.be/kv7c0oTrSyo?si=QB5UbROBd_95QjyB), [Blog post](https://sensmetry.com/advent-of-sysml-v2-lesson-7-week-1-recap/))
 8. **Packages and Names** ([YouTube](https://youtu.be/DChPckijZSQ?si=QivHmuEWyROPiw0w), [Blog post](https://sensmetry.com/advent-of-sysml-v2-lesson-8-packages-and-names/))
+9. **Sysand: Package Manager for SysML v2** ([YouTube](https://youtu.be/WuTqJraVx0w?si=O81vX-EKGb8WMeyZ), [Blog post](https://sensmetry.com/advent-of-sysml-v2-lesson-9-package-manager-for-sysml-v2/))
+10. **Comments and Annotations**  ([YouTube](https://youtu.be/mjgTf5SdL-4?si=ctPUOqOuL_wYMWL4), [Blog post](https://sensmetry.com/advent-of-sysml-v2-lesson-10-comments-and-annotations/))
+11. **Attributes and Quantities**
+
+## Helper tools & tips
+
+### SysML Syntax Explorer
+
+The SysML Syntax Explorer is a browser-based tool to visualize how Syside parses SysML v2 code. It displays code as an interactive concrete syntax tree (CST) structure, revealing the underlying hierarchy of declarations, expressions, and other language constructs. Use this tool to accelerate Syside Automator script development to quickly identify any elements of interest and how to parse them.
+
+- Explorer with instructions how to use it: https://docs.sensmetry.com/automator/tree-sitter-playground.html 
+- Full screen explorer: https://cst.syside.app/ 
+
+### Tips to resolve common issues
+
+#### Resolve shadowed packages issues
+
+To clear warning messages after renaming or moving SysML file to another folder (warnings such as "'<name>' shadows previously declared element in the global scope"), restart Syside language server. To do that, in command palette (Ctrl+P), select "Syside modeler: Restart language server" command. 
+
+#### Restarting your Syside Cloud workspace
+
+For issues like broken Claude Code integration, try restart your Syside Cloud workspace instance by visiting https://advent.syside.app/hub/home and click stop → start the server. This pulls latest GitHub repository content.
