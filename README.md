@@ -43,6 +43,7 @@ Here is a complete list of lessons with links to YouTube videos and blog posts:
 12. **Connections and Special Subsettings** ([YouTube](https://youtu.be/_5CbL0xOQ4s?si=bICj00fM1cldQatI), [Blog post](https://sensmetry.com/advent-of-sysml-v2-lesson-12-connections-and-special-subsettings/))
 13. **Ports, Interfaces, Items, and Flows** ([YouTube](https://youtu.be/qspuJD_kabc?si=NRl5815Sjvhdcyka), [Blog post](https://sensmetry.com/advent-of-sysml-v2-lesson-13-ports-interfaces-items-and-flows/))
 14. **Week 2 Recap**  ([YouTube](https://youtu.be/zoHyjoZGF_c?si=iGca1kpmi-m_-Z8F), [Blog post](https://sensmetry.com/advent-of-sysml-v2-lesson-14-week-2-recap/))
+15. **Expression Evaluation with Automator** ([YouTube](https://youtu.be/n7HoPvZu1BI?si=tTzxFsW5Wr3smqVN), [Blog post](https://sensmetry.com/advent-of-sysml-v2-lesson-15-expression-evaluation-with-automator/))
 
 ## Helper tools & tips
 
