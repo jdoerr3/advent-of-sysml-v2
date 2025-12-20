@@ -196,7 +196,21 @@ package L20_CI_CD_Automation {
                 }
 
                 part :>> cargoBay {
-                    item :>> payload = (northPoleBag, europeRouteBag, americasRouteBag, asiaRouteBag, africaOceaniaBag);
+                    item :>> payload = (northPoleBag, europeRouteBag, americasRouteBag, asiaRouteBag, africaOceaniaBag, emergencyBag);
+
+                    item emergencyBag : SleighDesign::Bag {
+                        doc /* Gift bag for the emergency route for the North Atlantic. */
+                        item :>> gifts = (
+                            book1, legoSet1, musicKeyboard1,
+                            boardGame1, skateboard1, stuffedAnimal1
+                        );
+                        ref part book1 : GiftDefinitions::Book;
+                        ref part legoSet1 : GiftDefinitions::LEGOSet;
+                        ref part musicKeyboard1 : GiftDefinitions::MusicKeyboard;
+                        ref part boardGame1 : GiftDefinitions::BoardGame;
+                        ref part skateboard1 : GiftDefinitions::Skateboard;
+                        ref part stuffedAnimal1 : GiftDefinitions::StuffedAnimal;
+                    }
 
                     item northPoleBag : SleighDesign::Bag {
                         doc /* Local deliveries around the North Pole region. */
