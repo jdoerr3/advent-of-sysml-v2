@@ -1,0 +1,84 @@
+# Display name for this workflow in the GitHub Actions UI
+name: "CI/CD for SysML v2 Models"
+
+# When to run this workflow:
+# - push: Every time code is pushed to the repository
+# - pull_request: When a pull request is opened or updated
+# - workflow_dispatch: Allows manual triggering from GitHub UI
+on: [push, pull_request, workflow_dispatch]
+
+# Permissions this workflow needs to run
+# - contents: read: Access repository files
+# - pages: write: Deploy to GitHub Pages
+# - id-token: write: Required for GitHub Pages deployment
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  # First job: Validate models and generate reports
+  validate-and-report:
+    # Run on Ubuntu Linux (GitHub provides this machine)
+    runs-on: ubuntu-latest
+
+    # Use a Docker container with Python 3.12 pre-installed
+    container: python:3.12-slim
+
+    # Environment variables available to all steps in this job
+    env:
+      # Syside license key (stored securely in GitHub Secrets)
+      SYSIDE_LICENSE_KEY: ${{ secrets.SYSIDE_LICENSE_KEY }}
+
+    steps:
+    # Step 1: Download repository files to the runner
+    - uses: actions/checkout@v4
+
+    # Step 2: Install Syside and dependencies
+    - name: Install dependencies
+      run: pip install -r ./lesson20/scripts/requirements.txt
+
+    # Step 3: Validate all SysML v2 models in the repository
+    # This checks syntax, semantics, and constraints
+    # Pipeline fails here if any model is invalid
+    - name: Validate all models
+      run: python -m syside check .
+
+    # Step 4: Generate report from the model
+    # Uses Syside Automator to extract data and create documentation
+    - name: Generate report
+      run: python ./lesson20/scripts/L20_Automations.py
+
+    # Step 5: Save the generated report as a downloadable artifact
+    # Allows you to download reports from the GitHub Actions UI
+    - name: Upload report
+      uses: actions/upload-artifact@v4
+      with:
+        name: bom-report
+        path: ./lesson20/reports/
+
+    # Step 6: Prepare report for GitHub Pages deployment
+    - name: Upload Pages artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: ./lesson20/reports/
+
+  # Second job: Deploy reports to GitHub Pages (public website)
+  # This job only runs if validate-and-report succeeds
+  deploy-pages:
+    runs-on: ubuntu-latest
+
+    # Wait for validate-and-report job to complete successfully
+    needs: validate-and-report
+
+    # GitHub Pages deployment environment configuration
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+    # Deploy the uploaded artifact to GitHub Pages
+    # Makes the report accessible via a public URL
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
